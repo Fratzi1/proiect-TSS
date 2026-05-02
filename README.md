@@ -1,4 +1,4 @@
-<h1>Testare unitară în JavaScript (Vitest, React Testing Library)</h1>
+<h1>Testare unitară în JavaScript (Vitest, React Testing Library, Playwright)</h1>
 
 <b> 1. Aplicație de comandat mâncare</b>
 
