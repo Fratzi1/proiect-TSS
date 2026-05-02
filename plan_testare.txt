@@ -1,0 +1,87 @@
+PLAN TESTARE
+
+1. Unit tests
+
+1.1. Functii utilitare
+- src/util/helper-functions.test.js
+    - calculateTotalAmount: cazul fara produse returneaza 0
+    - calculateTotalAmount: un singur produs cu cantitate 1 returneaza totalul corect
+    - calculateTotalAmount: un singur produs cu cantitate mai mare returneaza totalul corect
+    - calculateTotalAmount: mai multe produse de tipuri diferite returneaza totalul corect
+    - isEmail: returneaza true cand textul contine caracterul @
+    - isEmail: returneaza false cand textul nu contine caracterul @
+
+1.2. Componente simple
+- src/components/Input.test.jsx
+    - randarea label-ului si a valorii implicite
+    - verificarea atributelor type, name si id
+
+- src/components/Submit.test.jsx
+    - butonul este activ in starea initiala
+    - textul initial al butonului este Order
+
+1.3. Componente cu context mock-uit
+- src/components/Meal.test.jsx
+    - randarea corecta a continutului primit prin props: nume, pret, descriere, imagine, buton
+    - click pe Add to cart apeleaza addItemToCart cu id-ul produsului
+
+- src/components/Meals.test.jsx
+    - randarea unei liste de produse din context
+    - randarea mesajului fallback cand meals este undefined
+    - randarea unei liste goale cand meals este []
+
+2. Integration tests
+
+2.1. Header + modal + portal
+- src/components/Header.test.jsx
+    - click pe butonul Cart deschide modalul
+    - in coș gol apare mesajul No items in the cart!
+    - in coș gol butonul Checkout nu este afisat
+
+2.2. Checkout 
+- src/components/Checkout.test.jsx
+    - validari formular: 
+        - toate campurile goale afiseaza toate mesajele de eroare
+        - completarea numelui elimina doar eroarea pentru username
+        - completarea email-ului elimina doar eroarea pentru email
+        - completarea corecta a codului postal elimina eroarea pentru postal code
+        - introducerea unei valori nenumerice la postal code pastreaza eroarea
+        - completarea strazii si orasului elimina eroarea pentru adresa
+        - completarea doar a strazii pastreaza eroarea pentru adresa
+        - completarea doar a orasului pastreaza eroarea pentru adresa
+        - completarea tuturor campurilor elimina toate erorile de validare
+    - checkout: 
+        - la submit valid se apeleaza addOrder cu payload-ul corect
+        - la submit pending textul butonului devine Placing order ...
+        - la submit pending butonul devine disabled
+
+2.3. App + MealsContextProvider + fetch mock-uit
+- src/App.test.jsx
+    - randarea componentei fara erori
+    - mock-ul de backend pentru produse functioneaza si produsul este afisat
+    - add to cart (1 produs)
+        - click pe Add to cart actualizeaza counterul din header de la Cart (0) la Cart (1)
+        - dupa adaugarea unui produs, produsul devine vizibil in cos / mesajul No items in the cart dispare
+        - 2 x click pe Add to cart (acelasi produs) +> counterul ramane (1)
+        - 2 x click pe Add to cart (acelasi produs) +> in cos vedem acelasi produs de doua ori
+
+    - add to cart (2 produse diferite)
+        - 2 x click pe Add to cart actualizeaza counterul din header de la Cart (0) la Cart (2)
+        - dupa adaugarea celor 2 produse, ele devine vizibile in cos / mesajul No items in the cart dispare
+
+    - creste / scade cantitatea produselor:
+        - avem un produs, click pe + => cantitatea e 2
+        - avem un produs, click pe - => cosul devine gol
+    
+    - starea modalului = "Ordered"
+        - plasam comanda (cu un produs) si la final trebuie sa apara un mesaj de confirmare a comenzii
+
+3. End-to-end tests
+
+3.1. Fluxuri E2E Playwright
+- e2e/app.spec.js
+    - incarcarea tuturor produselor din backend real si verificarea afisarii lor in pagina
+    - adaugarea unui produs in cos si verificarea afisarii lui in modalul de cart
+    - cresterea cantitatii unui produs din controalele cosului
+    - scaderea cantitatii unui produs din controalele cosului
+    - verificarea persistarii comenzii in backend/data/orders.json dupa checkout
