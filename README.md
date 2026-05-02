@@ -50,7 +50,7 @@ Separat, în folderul e2e se regăsesc testele rulate cu playwright (npm run tes
 Am utilizat tool-ul AI Github Copilot, pentru testele repetitive. Spre exemplu, în suita de teste 'Checkout.test.jsx' se testează funcționarea validărilor formularului. După ce am creat testul "name filled => username error dissapears" și "email filled => email error dissapears" am scris un prompt în care am solicitat crearea unui test similar pentru câmpul număr poștal.
 O altă utilizare a fost la testul butoanelor de increase și decrease din modal. După ce am realizat testul pentru decrease, urmărind și schimbarea stării modalului, am scris un prompt pentru replicarea acestui test pentru cazul increase. Diferența adusă de AI a fost o verificare mai riguroasă, nu a verificat doar prezența textului 'fasole bătută', ci și a prețului 1 x $20.0.
 
-(Referințe)
+<b> (Referințe) </b>
 [1]. Fielding, Roy T., "Architectural Styles and the Design of Network-based Software Architectures," Doctoral dissertation, University of California, Irvine, 2000, https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.html.
 [2]. OpenAI, ChatGPT, https://chatgpt.com/, Prompt: "Generează câte o imagine pentru fiecare fel de mâncare din fișierul JSON available-meals.json atașat", Data generării: 27 aprilie 2026.
 [3]. Meta Open Source, "React – A JavaScript library for building user interfaces," React documentation, https://react.dev/, Accesat: mai 2026.
@@ -61,7 +61,7 @@ O altă utilizare a fost la testul butoanelor de increase și decrease din modal
 [8]. Testing Library, "React Testing Library," https://testing-library.com/docs/react-testing-library/intro/, Accesat: aprilie 2026.
 [9]. Microsoft et al., "Playwright – Fast and reliable end-to-end testing for modern web apps," https://playwright.dev/, Accesat: aprilie 2026.
 
-(Anexe)
+<b>(Anexe) </b> 
 [1]. './anexe/homescreen.png'
 [2]. './anexe/cos.png'
 [3]. './anexe/checkout.png'
