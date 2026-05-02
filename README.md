@@ -51,7 +51,7 @@ Am utilizat tool-ul AI Github Copilot, pentru testele repetitive. Spre exemplu, 
 O altă utilizare a fost la testul butoanelor de increase și decrease din modal. După ce am realizat testul pentru decrease, urmărind și schimbarea stării modalului, am scris un prompt pentru replicarea acestui test pentru cazul increase. Diferența adusă de AI a fost o verificare mai riguroasă, nu a verificat doar prezența textului 'fasole bătută', ci și a prețului 1 x $20.0.
 
 <b> (Referințe) </b>
-[1]. Fielding, Roy T., "Architectural Styles and the Design of Network-based Software Architectures," Doctoral dissertation, University of California, Irvine, 2000, https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.html.
+[1]. Fielding, Roy T., "Architectural Styles and the Design of Network-based Software Architectures," Doctoral dissertation, University of California, Irvine, 2000, https://roy.gbiv.com/pubs/dissertation/fielding_dissertation.pdf.
 [2]. OpenAI, ChatGPT, https://chatgpt.com/, Prompt: "Generează câte o imagine pentru fiecare fel de mâncare din fișierul JSON available-meals.json atașat", Data generării: 27 aprilie 2026.
 [3]. Meta Open Source, "React – A JavaScript library for building user interfaces," React documentation, https://react.dev/, Accesat: mai 2026.
 [4]. You, Evan et al., "Vite – Next Generation Frontend Tooling," Vite documentation, https://vite.dev/, Accesat: aprilie 2026.
